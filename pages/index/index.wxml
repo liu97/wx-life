@@ -1,0 +1,19 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="page-body">
+    <view class="page-section page-section-spacing swiper">
+      <swiper
+        indicator-dots="true" autoplay="true" circular="true" interval="4000" indicator-color="#FFFFFF" indicator-active-color="#1AAD19">
+        <block wx:for="{{bingImagesUrl}}" wx:key="*this">
+          <swiper-item>
+            <image
+              style="width: 100%; height: 100%; background-color: #eeeeee;"
+              mode="aspectFill"
+              src="{{item}}"
+            ></image>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+</view>
