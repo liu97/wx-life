@@ -35,14 +35,24 @@ App({
   },
   globalData: {
     userInfo: null,
-    location: null,
+    location: {
+      longitude: 116.29845,
+      latitude: 39.95933,
+      city: '北京市',
+      county: '海淀区',
+    },
     bing: {
       bingUrl: 'https://cn.bing.com',
       imagesApi: 'https://cn.bing.com/HPImageArchive.aspx',
     },
     heWeather: {
       heUrl: 'https://free-api.heweather.net',
-      key: '03274db03f884ebdaa539707688be2b1'
+      key: '03274db03f884ebdaa539707688be2b1',
+    },
+    tencent: {
+      tenUrl: 'https://apis.map.qq.com',
+      key: 'YHNBZ-SI7K2-A4NUO-CKWVR-BHDNQ-4WFNY',
+      secretKey: 'La0qYo8Uje8DH5GO50mV6Ke4h0mOf8BU', // WebServiceAPI 加密key
     }
   }
 })

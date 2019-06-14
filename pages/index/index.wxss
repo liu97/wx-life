@@ -1,5 +1,58 @@
+@import "./icon.wxss";
 .container {
   width: 100%;
   height: 100%;
   box-sizing: border-box;
+}
+.index-weather{
+  padding: 10rpx 20rpx;
+}
+.weather-main{
+  background: #fff;
+  padding: 10rpx 20rpx;
+  border-radius: 10rpx;
+  color: #000;
+}
+.county-btn{
+  display: inline-block;
+  border: 1rpx solid #1AAD19;
+  border-radius:8rpx;
+  padding:10rpx 5rpx;
+  font-size:30rpx;
+  color:#999;
+  text-align:center;
+  min-width:149.5rpx;
+  margin:16rpx 16rpx 16rpx 0;
+}
+.county{
+  color: #1AAD19;
+}
+.county-btn icon{
+  margin-right:5rpx;
+  vertical-align:middle;
+}
+
+.weather-basic{
+  color: #1AAD19;
+  border-bottom: 1rpx solid #ccc;
+}
+.centigrade{
+  font-size: 80rpx;
+}
+
+.weather-other{
+  display: flex;
+  margin: 20rpx 0;
+}
+.other-item{
+  flex: auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+.other-img{
+  font-size: 64rpx;
+}
+.other-explain{
+ color: #666; 
 }

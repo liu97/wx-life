@@ -1,19 +1,58 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="page-body">
-    <view class="page-section page-section-spacing swiper">
+<view class='container'>
+  <view class='index-body'>
+    <view class='index-swiper'> 
       <swiper
-        indicator-dots="true" autoplay="true" circular="true" interval="4000" indicator-color="#FFFFFF" indicator-active-color="#1AAD19">
-        <block wx:for="{{bingImagesUrl}}" wx:key="*this">
+        indicator-dots='true' autoplay='true' circular='true' interval='4000' indicator-color='#FFFFFF' indicator-active-color='#1AAD19'>
+        <block wx:for='{{bingImagesUrl}}' wx:key='*this'>
           <swiper-item>
             <image
-              style="width: 100%; height: 100%; background-color: #eeeeee;"
-              mode="aspectFill"
-              src="{{item}}"
+              style='width: 100%; height: 100%; background-color: #eeeeee;'
+              mode='aspectFill'
+              src='{{item}}'
             ></image>
           </swiper-item>
         </block>
       </swiper>
+    </view>
+    <view class='index-weather'>
+      <view class='location'>
+        <view class='county county-btn'>{{location.city}}{{location.county}}</view>
+        <view class='county-btn'>
+          <icon type='download' size='18'/>
+          <span>更改定位</span>
+        </view>
+      </view>
+      <view class='weather-main'>
+        <view class='weather-basic'>
+          <span class='centigrade'>{{weatherData.tmp}}℃</span>
+          <span class='status'>{{weatherData.cond_txt}} | </span>
+          <span class='air'>{{air.qlty}} {{air.aqi}}</span>
+        </view>
+        <view class='weather-other'>
+          <view class='other-item'>
+            <span class='other-img iconfont icon-weatherwindy'></span>
+            <span class='other-info'>{{weatherData.wind_sc}}</span>
+            <span class='other-explain'>{{weatherData.wind_dir}}</span>
+          </view>
+          <view class='other-item'>
+            <span class='other-img iconfont icon-weibiaoti1'></span>
+            <span class='other-info'>{{weatherData.hum}}</span>
+            <span class='other-explain'>相对湿度</span>
+          </view>
+          <view class='other-item'>
+            <span class='other-img iconfont icon-thermometer'></span>
+            <span class='other-info'>{{weatherData.fl}}</span>
+            <span class='other-explain'>体感温度</span>
+          </view>
+          <view class='other-item'>
+            <span class='other-img iconfont icon-icons-pressure'></span>
+            <span class='other-info'>{{weatherData.pres}}</span>
+            <span class='other-explain'>大气压强</span>
+          </view>
+        </view>
+        <view class='dress'>{{dress.txt}}</view>
+      </view>
     </view>
   </view>
 </view>
