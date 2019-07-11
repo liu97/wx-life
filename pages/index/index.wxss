@@ -33,7 +33,6 @@
 }
 
 .weather-basic{
-  color: #1AAD19;
   border-bottom: 1rpx solid #ccc;
 }
 .centigrade{

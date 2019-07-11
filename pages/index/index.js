@@ -75,17 +75,20 @@ Page({
       complete(res) {},
     })
   },
-  getCity(location){ // 获取
+  getCity(location){ // 根据经纬度获取省市
     if(!location){
       console.error('未传入地址');
       return;
     }
     return new Promise((resolve, reject) => {
+      let path = '/ws/geocoder/v1/';
+      let sig = this.getMd5Sig(path, app.globalData.tencent.key, `${location.latitude},${location.longitude}`, 'kGBYdBrD80PYyzriXBXkWFNaXcVr772O');
       wx.request({
-        url: `${app.globalData.tencent.tenUrl}/ws/geocoder/v1/`,
+        url: `${app.globalData.tencent.tenUrl}${path}`,
         data: {
           key: app.globalData.tencent.key,
           location: `${location.latitude},${location.longitude}`,
+          sig: sig,
         },
         success: result => {
           resolve(result);
